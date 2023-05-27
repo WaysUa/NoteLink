@@ -5,6 +5,7 @@ object Config {
 
     const val appModulePackageName = "com.main.notelink"
     const val coreModulePackageName = "com.main.core"
+    const val coreDatasourceModulePackageName = "com.main.core_datasource"
     const val featNotesModulePackageName = "com.main.feat_notes"
 
     const val versionName = "1.0"

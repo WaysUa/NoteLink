@@ -16,3 +16,4 @@ rootProject.name = "NoteLink"
 include(":app")
 include(":core")
 include(":feat-notes")
+include(":core-datasource")

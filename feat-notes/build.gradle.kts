@@ -40,4 +40,5 @@ dependencies {
     implementation(Dependencies.Android.material)
     //Modules
     implementation(project(Modules.coreModule))
+    implementation(project(Modules.coreDatasourceModule))
 }
