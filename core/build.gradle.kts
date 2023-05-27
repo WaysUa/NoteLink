@@ -1,20 +1,18 @@
 plugins {
-    id(Plugins.Application.dependency)
+    id(Plugins.Library.dependency)
     id(Plugins.Android.dependency)
 }
 
 android {
-    namespace = Config.appModulePackageName
+    namespace = Config.coreModulePackageName
     compileSdk = Config.compileSdk
 
     defaultConfig {
-        applicationId = Config.appModulePackageName
         minSdk = Config.minSdk
         targetSdk = Config.targetSdk
-        versionCode = Config.versionCode
-        versionName = Config.versionName
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -39,6 +37,4 @@ dependencies {
     implementation(Dependencies.Android.appCompat)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
-    //Modules
-    implementation(project(Modules.coreModule))
 }

@@ -14,3 +14,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "NoteLink"
 include(":app")
+include(":core")
