@@ -1,6 +1,7 @@
 package com.main.notelink.sl
 
 import androidx.lifecycle.ViewModel
+import com.main.core.sl.Core
 import com.main.core.sl.Module
 import com.main.notelink.data.MainModule
 import com.main.notelink.presentation.viewmodel.MainViewModel
@@ -16,13 +17,13 @@ interface DependencyContainer {
     }
 
     class Base(
-        //private val core: Core,
+        private val core: Core,
         private val dependencyContainer: DependencyContainer = Error()
     ) : DependencyContainer {
 
 
         override fun <T : ViewModel> module(clazz: Class<T>): Module<*> = when (clazz) {
-            MainViewModel::class.java -> MainModule(/*core*/)
+            MainViewModel::class.java -> MainModule(core)
             else -> dependencyContainer.module(clazz)
         }
     }

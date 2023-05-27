@@ -39,5 +39,5 @@ dependencies {
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
     //Modules
-    implementation(project(Modules.featNotesModule))
+    implementation(project(Modules.coreModule))
 }

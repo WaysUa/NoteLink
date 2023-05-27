@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.viewbinding.ViewBinding
 import com.main.core.sl.ProvideViewModel
+import com.main.notelink.R
 import com.main.notelink.databinding.ActivityMainBinding
 import com.main.notelink.presentation.viewmodel.MainViewModel
 
@@ -15,8 +16,13 @@ class MainActivity : AppCompatActivity(), ProvideViewModel {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
         val mainViewModel = provideViewModel(MainViewModel::class.java, this)
-        mainViewModel.init()
+
+        mainViewModel.observe(this) { strategy ->
+            strategy.navigate(supportFragmentManager, R.id.container)
+        }
+        mainViewModel.init(savedInstanceState == null)
     }
 
     override fun <T : ViewModel> provideViewModel(clazz: Class<T>, owner: ViewModelStoreOwner): T {

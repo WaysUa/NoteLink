@@ -1,14 +1,14 @@
-package com.main.core.base
+package com.main.core.data
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseFragment : Fragment() {
+abstract class BaseFragment<T> : Fragment() {
     
     protected abstract val binding: ViewBinding
 
@@ -17,6 +17,7 @@ abstract class BaseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        Log.d("MyLog", "BaseFragment: onCreateView")
         return binding.root
     }
 }
