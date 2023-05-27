@@ -31,6 +31,7 @@ android {
     kotlinOptions {
         jvmTarget = Config.jvmTarget
     }
+    viewBinding.enable = true
 }
 
 dependencies {
