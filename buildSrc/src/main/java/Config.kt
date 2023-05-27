@@ -5,7 +5,7 @@ object Config {
 
     const val appModulePackageName = "com.main.notelink"
     const val coreModulePackageName = "com.main.core"
-    const val featAuthSignInModulePackageName = "com.main.feat_signin"
+    const val featNotesModulePackageName = "com.main.feat_notes"
 
     const val versionName = "1.0"
     const val versionCode = 1
