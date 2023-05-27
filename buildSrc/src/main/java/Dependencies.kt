@@ -8,11 +8,17 @@ object Dependencies {
     }
 
     object Testing {
+        
         object JUnit {
-             const val core = "junit:junit:4.13.2"
+            const val core = "junit:junit:4.13.2"
+            const val ui = "androidx.test.ext:junit:1.1.5"
         }
         object KotlinX {
             const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1"
+        }
+
+        object Espresso {
+            const val core = "androidx.test.espresso:espresso-core:3.5.1"
         }
     }
 }

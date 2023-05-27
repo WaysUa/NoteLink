@@ -1,0 +1,8 @@
+<resources>
+    <style name="Theme.NoteLink" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/light</item>
+        <item name="android:navigationBarColor">@color/light</item>
+        <item name="android:background">@color/light</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

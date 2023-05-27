@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Dark Theme -->
+    <color name="dark">#FF121424</color>
+
+    <!-- Light Theme -->
+    <color name="light">#CDCFE4</color>
+</resources>
