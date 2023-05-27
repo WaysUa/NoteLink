@@ -19,7 +19,7 @@ class MainViewModel(
 
     override fun init(isFirstRun: Boolean) {
         if (isFirstRun) {
-            navigationCommunication.map(NavigationStrategy.Replace(NotesScreen()))
+            navigationCommunication.map(NavigationStrategy.Replace(NotesScreen))
         }
     }
 }

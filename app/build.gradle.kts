@@ -40,6 +40,9 @@ dependencies {
     implementation(Dependencies.Android.appCompat)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
+    //Testing
+    testImplementation(Dependencies.Testing.JUnit.core)
+    testImplementation(Dependencies.Testing.KotlinX.coroutines)
     //Modules
     implementation(project(Modules.coreModule))
     implementation(project(Modules.coreModule))
