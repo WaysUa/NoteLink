@@ -2,9 +2,9 @@
 <resources>
     <style name="Theme.NoteLink" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:statusBarColor">@color/cornsilk</item>
-        <item name="android:navigationBarColor">@color/dark</item>
+        <item name="android:navigationBarColor">@color/cornsilk</item>
         <item name="android:background">@color/cornsilk</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:colorBackgroundFloating">@color/beige</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>

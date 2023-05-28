@@ -3,6 +3,13 @@
     <!-- Base Colors -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#403B3B</color>
+
+    <color name="tea_green">#CCD5AE</color>
+    <color name="beige">#E9EDC9</color>
+    <color name="cornsilk">#FEFAE0</color>
+    <color name="papaya_whip">#FAEDCD</color>
+    <color name="buff">#D4A373</color>
 
     <!-- Dark Theme -->
     <color name="dark">#FF121424</color>
