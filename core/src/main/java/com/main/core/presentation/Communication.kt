@@ -3,7 +3,6 @@ package com.main.core.presentation
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
-import com.github.johnnysc.numberstesttask.main.presentation.SingleLiveEvent
 
 interface Communication {
 

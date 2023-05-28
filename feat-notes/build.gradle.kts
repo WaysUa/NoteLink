@@ -38,6 +38,10 @@ dependencies {
     implementation(Dependencies.Android.appCompat)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
+    implementation(Dependencies.Android.fragment)
+    //Navigation
+    implementation(Dependencies.Navigation.navigationFragment)
+    implementation(Dependencies.Navigation.navigationUi)
     //Modules
     implementation(project(Modules.coreModule))
     implementation(project(Modules.coreDatasourceModule))

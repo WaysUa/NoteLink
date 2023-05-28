@@ -1,4 +1,4 @@
-package com.github.johnnysc.numberstesttask.main.presentation
+package com.main.core.presentation
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

@@ -40,12 +40,16 @@ dependencies {
     implementation(Dependencies.Android.appCompat)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
+    implementation(Dependencies.Android.fragment)
     //Unit Testing
     testImplementation(Dependencies.Testing.JUnit.core)
     testImplementation(Dependencies.Testing.KotlinX.coroutines)
     //Ui Testing
     androidTestImplementation(Dependencies.Testing.JUnit.ui)
     androidTestImplementation(Dependencies.Testing.Espresso.core)
+    //Navigation
+    implementation(Dependencies.Navigation.navigationFragment)
+    implementation(Dependencies.Navigation.navigationUi)
     //Modules
     implementation(project(Modules.coreModule))
     implementation(project(Modules.coreDatasourceModule))

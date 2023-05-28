@@ -2,6 +2,7 @@ package com.main.feat_notes.presentation.ui
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.main.core.data.BaseFragment
@@ -9,9 +10,9 @@ import com.main.feat_notes.databinding.FragmentNotesBinding
 import com.main.feat_notes.presentation.adapter.NotesAdapter
 import com.main.feat_notes.presentation.viewmodel.NotesViewModel
 
-class NotesFragment : BaseFragment<NotesViewModel.Base>() {
+class NotesFragment : BaseFragment<NotesViewModel>() {
 
-    override val viewModelClass: Class<NotesViewModel.Base> = NotesViewModel.Base::class.java
+    override val viewModelClass: Class<NotesViewModel> = NotesViewModel::class.java
     override val binding by lazy { FragmentNotesBinding.inflate(layoutInflater) }
 
     private val adapter = NotesAdapter()
@@ -20,7 +21,7 @@ class NotesFragment : BaseFragment<NotesViewModel.Base>() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAddNote.setOnClickListener {
-
+            viewModel.navigateToAddNoteFragment(findNavController())
         }
 
         binding.rvNotes.layoutManager = StaggeredGridLayoutManager(2, 1)

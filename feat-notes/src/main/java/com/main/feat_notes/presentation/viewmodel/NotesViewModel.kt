@@ -1,10 +1,14 @@
 package com.main.feat_notes.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.navigation.NavController
+import com.main.feat_notes.domain.NotesNavigationRepository
 
-interface NotesViewModel {
+class NotesViewModel(
+    private val notesNavigationRepository: NotesNavigationRepository
+): ViewModel(), NotesNavigationRepository {
 
-    class Base(
-
-    ): ViewModel()
+    override fun navigateToAddNoteFragment(navController: NavController) {
+        notesNavigationRepository.navigateToAddNoteFragment(navController)
+    }
 }

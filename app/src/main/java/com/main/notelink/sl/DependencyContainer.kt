@@ -1,11 +1,12 @@
 package com.main.notelink.sl
 
 import androidx.lifecycle.ViewModel
-import com.main.core.sl.Core
 import com.main.core.sl.Module
+import com.main.feat_add_note.presentation.viewmodel.AddNoteViewModel
+import com.main.feat_add_note.sl.AddNoteModule
 import com.main.feat_notes.presentation.viewmodel.NotesViewModel
+import com.main.feat_notes.sl.NotesCore
 import com.main.feat_notes.sl.NotesModule
-import com.main.notelink.presentation.viewmodel.MainViewModel
 
 interface DependencyContainer {
 
@@ -18,14 +19,14 @@ interface DependencyContainer {
     }
 
     class Base(
-        private val core: Core,
+        private val notesCore: NotesCore,
         private val dependencyContainer: DependencyContainer = Error()
     ) : DependencyContainer {
 
 
         override fun <T : ViewModel> module(clazz: Class<T>): Module<*> = when (clazz) {
-            MainViewModel::class.java -> MainModule(core)
-            NotesViewModel.Base::class.java -> NotesModule()
+            NotesViewModel::class.java -> NotesModule(notesCore)
+            AddNoteViewModel::class.java -> AddNoteModule()
             else -> dependencyContainer.module(clazz)
         }
     }

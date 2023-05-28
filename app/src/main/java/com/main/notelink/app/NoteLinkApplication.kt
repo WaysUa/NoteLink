@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
-import com.main.core.sl.Core
 import com.main.core.sl.ProvideViewModel
+import com.main.feat_notes.sl.NotesCore
 import com.main.notelink.sl.DependencyContainer
 import com.main.notelink.sl.ViewModelsFactory
 
@@ -15,7 +15,7 @@ class NoteLinkApplication : Application(), ProvideViewModel {
 
     override fun onCreate() {
         super.onCreate()
-        dependencyContainer = DependencyContainer.Base(Core.Base())
+        dependencyContainer = DependencyContainer.Base(NotesCore.Base())
         viewModelsFactory = ViewModelsFactory(dependencyContainer)
     }
 
