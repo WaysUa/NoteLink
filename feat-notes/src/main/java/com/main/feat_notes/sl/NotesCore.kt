@@ -8,12 +8,12 @@ interface NotesCore : ProvideNotesNavigation {
     class Base : NotesCore {
         private val notesNavigationRepository = NotesNavigationRepositoryImpl()
 
-        override fun provideNotesNavigation(): NotesNavigationRepository {
+        override fun provideNotesNavigationRepository(): NotesNavigationRepository {
             return notesNavigationRepository
         }
     }
 }
 
 interface ProvideNotesNavigation {
-    fun provideNotesNavigation(): NotesNavigationRepository
+    fun provideNotesNavigationRepository(): NotesNavigationRepository
 }

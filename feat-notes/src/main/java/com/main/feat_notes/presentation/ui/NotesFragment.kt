@@ -3,7 +3,6 @@ package com.main.feat_notes.presentation.ui
 import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.main.core.data.BaseFragment
 import com.main.feat_notes.databinding.FragmentNotesBinding
