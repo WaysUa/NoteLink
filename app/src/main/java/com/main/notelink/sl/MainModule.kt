@@ -1,4 +1,4 @@
-package com.main.notelink.data
+package com.main.notelink.sl
 
 import com.main.core.sl.Core
 import com.main.core.sl.Module

@@ -7,13 +7,21 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.main.core.data.BaseFragment
 import com.main.feat_notes.databinding.FragmentNotesBinding
 import com.main.feat_notes.presentation.adapter.NotesAdapter
+import com.main.feat_notes.presentation.viewmodel.NotesViewModel
 
-class NotesFragment : BaseFragment<Any>() {
+class NotesFragment : BaseFragment<NotesViewModel.Base>() {
+
+    override val viewModelClass: Class<NotesViewModel.Base> = NotesViewModel.Base::class.java
     override val binding by lazy { FragmentNotesBinding.inflate(layoutInflater) }
+
     private val adapter = NotesAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnAddNote.setOnClickListener {
+
+        }
 
         binding.rvNotes.layoutManager = StaggeredGridLayoutManager(2, 1)
         binding.rvNotes.adapter = adapter
