@@ -13,4 +13,8 @@ object Plugins {
         const val dependency = "org.jetbrains.kotlin.android"
         const val version = "1.8.10"
     }
+
+    object Kapt {
+        const val dependency = "kotlin-kapt"
+    }
 }

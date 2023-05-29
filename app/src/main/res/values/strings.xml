@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NoteLink</string>
+    <string name="back">Back</string>
+    <string name="title">Title</string>
+    <string name="content">Content</string>
+    <string name="add_new_note">Add new note</string>
 </resources>

@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/notesFragment"
-        android:name="com.main.feat_notes.presentation.ui.NotesFragment"
+        android:name="com.main.notelink.features.notes.presentation.ui.NotesFragment"
         android:label="NotesFragment">
 
         <deepLink app:uri="android-app://androidx.navigation/android://application/note_link/notes"/>

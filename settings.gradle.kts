@@ -14,7 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "NoteLink"
 include(":app")
-include(":core")
-include(":feat-notes")
-include(":core-datasource")
-include(":feat-add-note")

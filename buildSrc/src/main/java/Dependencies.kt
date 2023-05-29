@@ -15,6 +15,14 @@ object Dependencies {
         const val navigationUi = "androidx.navigation:navigation-ui-ktx:$version"
     }
 
+    object Room {
+        private const val version = "2.5.1"
+
+        const val core = "androidx.room:room-ktx:$version"
+        const val compiler = "androidx.room:room-compiler:$version"
+        const val runtime = "androidx.room:room-runtime:$version"
+    }
+
     object Testing {
         
         object JUnit {
@@ -27,6 +35,10 @@ object Dependencies {
 
         object Espresso {
             const val core = "androidx.test.espresso:espresso-core:3.5.1"
+        }
+
+        object Room {
+            const val core = "androidx.room:room-testing:2.5.1"
         }
     }
 }

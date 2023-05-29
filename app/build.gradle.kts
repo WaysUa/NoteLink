@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.Application.dependency)
     id(Plugins.Android.dependency)
+    id(Plugins.Kapt.dependency)
 }
 
 android {
@@ -50,9 +51,7 @@ dependencies {
     //Navigation
     implementation(Dependencies.Navigation.navigationFragment)
     implementation(Dependencies.Navigation.navigationUi)
-    //Modules
-    implementation(project(Modules.coreModule))
-    implementation(project(Modules.coreDatasourceModule))
-    implementation(project(Modules.featNotesModule))
-    implementation(project(Modules.featAddNoteModule))
+    //Room
+    implementation(Dependencies.Room.core)
+    kapt(Dependencies.Room.compiler)
 }

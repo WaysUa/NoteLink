@@ -5,7 +5,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.rules.ActivityScenarioRule
-import com.main.notelink.presentation.ui.MainActivity
+import com.main.notelink.main.presentation.ui.MainActivity
 import org.junit.Rule
 import org.junit.Test
 

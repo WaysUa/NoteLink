@@ -1,6 +1,7 @@
 plugins {
     id(Plugins.Library.dependency)
     id(Plugins.Android.dependency)
+    id(Plugins.Kapt.dependency)
 }
 
 android {
@@ -38,6 +39,8 @@ dependencies {
     implementation(Dependencies.Android.appCompat)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
-    //Modules
-    implementation(project(Modules.coreModule))
+    //Room
+    implementation(Dependencies.Room.core)
+    kapt(Dependencies.Room.compiler)
+    api(Dependencies.Room.runtime)
 }
