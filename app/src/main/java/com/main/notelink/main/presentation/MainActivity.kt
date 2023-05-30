@@ -1,4 +1,4 @@
-package com.main.notelink.main.presentation.ui
+package com.main.notelink.main.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

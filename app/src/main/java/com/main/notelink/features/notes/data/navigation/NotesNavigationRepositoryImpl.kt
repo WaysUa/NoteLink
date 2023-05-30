@@ -1,4 +1,4 @@
-package com.main.notelink.features.notes.data.repository
+package com.main.notelink.features.notes.data.navigation
 
 import androidx.navigation.NavController
 import com.main.notelink.R

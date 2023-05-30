@@ -1,6 +1,10 @@
 package com.main.notelink.main.sl
 
-interface Core:  CacheModule {
+import com.main.notelink.main.presentation.DispatchersList
+
+interface Core :  CacheModule {
+
+    fun provideDispatchers(): DispatchersList
 
     class Base(
         private val provideInstances: ProvideInstances
@@ -9,6 +13,12 @@ interface Core:  CacheModule {
         private val cacheModule by lazy {
             provideInstances.provideCacheModule()
         }
+
+        private val dispatchersList by lazy {
+            DispatchersList.Base()
+        }
+
+        override fun provideDispatchers() = dispatchersList
 
         override fun provideDataBase() = cacheModule.provideDataBase()
     }

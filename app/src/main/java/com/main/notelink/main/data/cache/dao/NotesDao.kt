@@ -1,10 +1,10 @@
-package com.main.notelink.features.notes.domain.cache
+package com.main.notelink.main.data.cache.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.main.notelink.features.notes.data.entities.NoteCache
+import com.main.notelink.main.data.cache.entities.NoteCache
 
 @Dao
 interface NotesDao {

@@ -1,4 +1,4 @@
-package com.main.notelink.features.notes.data.entities
+package com.main.notelink.main.data.cache.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

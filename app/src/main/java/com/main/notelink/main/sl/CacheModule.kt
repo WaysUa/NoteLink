@@ -2,7 +2,7 @@ package com.main.notelink.main.sl
 
 import android.content.Context
 import androidx.room.Room
-import com.main.notelink.main.data.NoteLinkDatabase
+import com.main.notelink.main.data.cache.NoteLinkDatabase
 
 interface CacheModule {
     fun provideDataBase(): NoteLinkDatabase

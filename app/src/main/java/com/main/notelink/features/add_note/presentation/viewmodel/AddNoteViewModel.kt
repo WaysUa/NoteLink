@@ -2,7 +2,7 @@ package com.main.notelink.features.add_note.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
-import com.main.notelink.features.notes.data.entities.NoteCache
+import com.main.notelink.main.data.cache.entities.NoteCache
 import com.main.notelink.features.add_note.domain.navigation.AddNoteNavigationRepository
 import com.main.notelink.features.add_note.domain.repository.AddNoteRepository
 import com.main.notelink.features.add_note.domain.usecase.AddNoteUseCase
@@ -17,6 +17,6 @@ class AddNoteViewModel(
     }
 
     override suspend fun addNote(noteCache: NoteCache) {
-        addNoteUseCase.addNote(noteCache)
+        addNoteUseCase.execute(noteCache)
     }
 }

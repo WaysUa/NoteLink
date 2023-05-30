@@ -1,4 +1,4 @@
-package com.main.notelink.main.data
+package com.main.notelink.main.data.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

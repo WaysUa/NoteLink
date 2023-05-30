@@ -10,10 +10,10 @@ import com.main.notelink.main.sl.Core
 class AddNoteModule(private val core: Core) : Module<AddNoteViewModel> {
     override fun viewModel(): AddNoteViewModel {
         return AddNoteViewModel(
-            addNoteNavigationRepository = AddNoteNavigationRepositoryImpl(),
             addNoteUseCase = AddNoteUseCase(
                 AddNoteRepositoryImpl(core.provideDataBase().notesDao())
-            )
+            ),
+            addNoteNavigationRepository = AddNoteNavigationRepositoryImpl()
         )
     }
 }
