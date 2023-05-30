@@ -19,11 +19,15 @@ class AddNoteFragment : BaseFragment<AddNoteViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        lifecycleScope.launch(Dispatchers.IO) {
-            viewModel.addNote(NoteCache(title = "Hello", content = "World"))
-        }
-
         binding.btnBack.setOnClickListener {
+            lifecycleScope.launch(Dispatchers.IO) {
+                viewModel.addNote(
+                    NoteCache(
+                        title = binding.etTitle.text.toString(),
+                        content = binding.etContent.text.toString()
+                    )
+                )
+            }
             viewModel.navigateToNotesFragment(findNavController())
         }
     }
