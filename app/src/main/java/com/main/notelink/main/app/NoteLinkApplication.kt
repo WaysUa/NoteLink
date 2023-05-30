@@ -4,11 +4,10 @@ import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
-import com.main.core.sl.ProvideViewModel
-import com.main.core_datasource.sl.CacheModule
-import com.main.notelink.features.add_note.sl.AddNoteCore
-import com.main.notelink.features.notes.sl.NotesCore
+import com.main.notelink.main.sl.ProvideViewModel
+import com.main.notelink.main.sl.Core
 import com.main.notelink.main.sl.DependencyContainer
+import com.main.notelink.main.sl.ProvideInstances
 import com.main.notelink.main.sl.ViewModelsFactory
 
 class NoteLinkApplication : Application(), ProvideViewModel {
@@ -17,11 +16,8 @@ class NoteLinkApplication : Application(), ProvideViewModel {
 
     override fun onCreate() {
         super.onCreate()
-        val cacheModule = CacheModule.Base(context = applicationContext)
-        dependencyContainer = DependencyContainer.Base(
-            notesCore = NotesCore.Base(cacheModule),
-            addNoteCore = AddNoteCore.Base(cacheModule)
-        )
+        val provideInstances = ProvideInstances.Release(this)
+        dependencyContainer = DependencyContainer.Base(core = Core.Base(provideInstances))
         viewModelsFactory = ViewModelsFactory(dependencyContainer)
     }
 

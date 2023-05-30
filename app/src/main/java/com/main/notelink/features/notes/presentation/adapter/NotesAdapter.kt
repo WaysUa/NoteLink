@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.main.feat_notes.R
-import com.main.feat_notes.databinding.ItemNoteBinding
+import com.main.notelink.R
+import com.main.notelink.databinding.ItemNoteBinding
 
 class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     private val notes = mutableListOf<String>()

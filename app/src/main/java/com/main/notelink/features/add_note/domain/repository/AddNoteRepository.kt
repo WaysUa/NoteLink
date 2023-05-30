@@ -1,6 +1,6 @@
 package com.main.notelink.features.add_note.domain.repository
 
-import com.main.core_datasource.data.cache.NoteCache
+import com.main.notelink.features.notes.data.entities.NoteCache
 
 interface AddNoteRepository {
 

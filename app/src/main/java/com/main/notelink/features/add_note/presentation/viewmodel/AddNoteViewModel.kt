@@ -2,7 +2,7 @@ package com.main.notelink.features.add_note.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
-import com.main.core_datasource.data.cache.NoteCache
+import com.main.notelink.features.notes.data.entities.NoteCache
 import com.main.notelink.features.add_note.domain.navigation.AddNoteNavigationRepository
 import com.main.notelink.features.add_note.domain.repository.AddNoteRepository
 import com.main.notelink.features.add_note.domain.usecase.AddNoteUseCase

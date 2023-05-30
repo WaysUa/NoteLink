@@ -1,14 +1,12 @@
 package com.main.notelink.features.add_note.presentation.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.viewbinding.ViewBinding
-import com.main.core.data.BaseFragment
-import com.main.core_datasource.data.cache.NoteCache
-import com.main.feat_add_note.databinding.FragmentAddNoteBinding
+import com.main.notelink.main.data.BaseFragment
+import com.main.notelink.features.notes.data.entities.NoteCache
+import com.main.notelink.databinding.FragmentAddNoteBinding
 import com.main.notelink.features.add_note.presentation.viewmodel.AddNoteViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

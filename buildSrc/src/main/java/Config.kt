@@ -4,10 +4,6 @@ object Config {
     const val targetSdk = 33
 
     const val appModulePackageName = "com.main.notelink"
-    const val coreModulePackageName = "com.main.core"
-    const val coreDatasourceModulePackageName = "com.main.core_datasource"
-    const val featNotesModulePackageName = "com.main.feat_notes"
-    const val featAddNoteModulePackageName = "com.main.feat_add_note"
 
     const val versionName = "1.0"
     const val versionCode = 1
