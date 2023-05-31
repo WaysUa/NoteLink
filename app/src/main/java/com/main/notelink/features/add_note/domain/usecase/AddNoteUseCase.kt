@@ -8,6 +8,7 @@ class AddNoteUseCase(
 ) {
 
     suspend fun execute(noteCache: NoteCache) {
+        if (noteCache.content.isBlank() && noteCache.title.isBlank()) return
         addNoteRepository.addNote(noteCache)
     }
 }
