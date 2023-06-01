@@ -1,13 +1,12 @@
-package com.main.notelink.main.data.base
+package com.main.notelink.core.data.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
-import com.main.notelink.main.sl.ProvideViewModel
+import com.main.notelink.core.sl.ProvideViewModel
 
 abstract class BaseFragment<T: ViewModel> : Fragment() {
 

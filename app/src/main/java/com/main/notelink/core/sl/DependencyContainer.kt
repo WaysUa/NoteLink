@@ -1,4 +1,4 @@
-package com.main.notelink.main.sl
+package com.main.notelink.core.sl
 
 import androidx.lifecycle.ViewModel
 import com.main.notelink.features.add_note.presentation.viewmodel.AddNoteViewModel

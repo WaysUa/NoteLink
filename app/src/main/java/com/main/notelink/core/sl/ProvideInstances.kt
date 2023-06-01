@@ -1,6 +1,7 @@
-package com.main.notelink.main.sl
+package com.main.notelink.core.sl
 
 import android.content.Context
+import com.main.notelink.main.sl.CacheModule
 
 interface ProvideInstances {
 

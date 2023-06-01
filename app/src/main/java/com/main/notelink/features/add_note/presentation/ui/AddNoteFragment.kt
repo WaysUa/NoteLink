@@ -5,7 +5,7 @@ import android.view.View
 import androidx.activity.addCallback
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.main.notelink.main.data.base.BaseFragment
+import com.main.notelink.core.data.base.BaseFragment
 import com.main.notelink.main.data.cache.entities.NoteCache
 import com.main.notelink.databinding.FragmentAddNoteBinding
 import com.main.notelink.features.add_note.domain.repository.AddNoteRepository

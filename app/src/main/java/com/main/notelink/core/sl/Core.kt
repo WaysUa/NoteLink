@@ -1,8 +1,9 @@
-package com.main.notelink.main.sl
+package com.main.notelink.core.sl
 
 import com.main.notelink.main.presentation.DispatchersList
+import com.main.notelink.main.sl.CacheModule
 
-interface Core :  CacheModule {
+interface Core : CacheModule {
 
     fun provideDispatchers(): DispatchersList
 
