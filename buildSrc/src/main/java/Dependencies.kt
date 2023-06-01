@@ -37,6 +37,10 @@ object Dependencies {
             const val core = "androidx.test.espresso:espresso-core:3.5.1"
         }
 
+        object AndroidX {
+            const val core = "androidx.test:core-ktx:1.5.0"
+        }
+
         object Room {
             const val core = "androidx.room:room-testing:2.5.1"
         }

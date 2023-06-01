@@ -14,12 +14,10 @@ abstract class BaseFragment<T: ViewModel> : Fragment() {
     protected lateinit var viewModel: T
     protected abstract val viewModelClass: Class<T>
     protected abstract val binding: ViewBinding
-    protected lateinit var activity: FragmentActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = (requireActivity() as ProvideViewModel).provideViewModel(viewModelClass, this)
-        activity = requireActivity()
     }
 
     override fun onCreateView(

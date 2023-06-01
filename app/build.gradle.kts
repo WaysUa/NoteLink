@@ -48,6 +48,8 @@ dependencies {
     //Ui Testing
     androidTestImplementation(Dependencies.Testing.JUnit.ui)
     androidTestImplementation(Dependencies.Testing.Espresso.core)
+    androidTestImplementation(Dependencies.Testing.KotlinX.coroutines)
+    androidTestImplementation(Dependencies.Testing.AndroidX.core)
     //Navigation
     implementation(Dependencies.Navigation.navigationFragment)
     implementation(Dependencies.Navigation.navigationUi)

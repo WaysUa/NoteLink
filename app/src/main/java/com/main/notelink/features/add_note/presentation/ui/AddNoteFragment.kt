@@ -31,7 +31,7 @@ class AddNoteFragment : BaseFragment<AddNoteViewModel>() {
             viewModel.navigateToNotesFragment(findNavController())
         }
 
-        activity.onBackPressedDispatcher.addCallback {
+        requireActivity().onBackPressedDispatcher.addCallback {
             viewModel.addNote(
                 NoteCache(
                     title = binding.etTitle.text.toString(),
