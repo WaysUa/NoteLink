@@ -2,6 +2,7 @@ plugins {
     id(Plugins.Application.dependency)
     id(Plugins.Android.dependency)
     id(Plugins.Kapt.dependency)
+    id(Plugins.Parcelable.dependency)
 }
 
 android {

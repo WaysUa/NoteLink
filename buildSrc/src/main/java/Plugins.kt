@@ -17,4 +17,8 @@ object Plugins {
     object Kapt {
         const val dependency = "kotlin-kapt"
     }
+
+    object Parcelable {
+        const val dependency = "kotlin-parcelize"
+    }
 }

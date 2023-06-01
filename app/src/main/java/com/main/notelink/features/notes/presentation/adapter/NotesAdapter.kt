@@ -10,14 +10,17 @@ import com.main.notelink.R
 import com.main.notelink.databinding.ItemNoteBinding
 import com.main.notelink.features.note.common.data.Note
 
-class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
+class NotesAdapter(
+    private val onItemClick: (Note) -> Unit
+) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     private val notes = mutableListOf<Note>()
 
     class NotesViewHolder(view: View): ViewHolder(view) {
         private val binding by lazy { ItemNoteBinding.bind(view) }
-        fun bind(note: Note) {
+        fun bind(note: Note, onItemClick: (Note) -> Unit) {
             binding.tvTitle.text = note.title
             binding.tvContent.text = note.content
+            binding.itemNoteLayout.setOnClickListener { onItemClick.invoke(note) }
         }
     }
 
@@ -27,7 +30,7 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
-        holder.bind(notes[position])
+        holder.bind(notes[position], onItemClick)
     }
 
     override fun getItemCount() = notes.size

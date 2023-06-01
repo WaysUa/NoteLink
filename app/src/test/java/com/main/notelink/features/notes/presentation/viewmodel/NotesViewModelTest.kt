@@ -27,8 +27,8 @@ class NotesViewModelTest : BaseTest() {
 
         val notesResult = getNotesRepository.getNotes()
 
-        assertEquals(notesResult[0], notesCommunication.notesList[0])
-        assertEquals(notesResult[1], notesCommunication.notesList[1])
-        assertEquals(notesResult[2], notesCommunication.notesList[2])
+        assertEquals(notesResult[0].mapToNote(), notesCommunication.notesList[0])
+        assertEquals(notesResult[1].mapToNote(), notesCommunication.notesList[1])
+        assertEquals(notesResult[2].mapToNote(), notesCommunication.notesList[2])
     }
 }

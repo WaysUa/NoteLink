@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
 import androidx.navigation.fragment.findNavController
-import com.main.notelink.core.data.base.BaseFragment
+import com.main.notelink.core.data.BaseFragment
 import com.main.notelink.databinding.FragmentAddNoteBinding
 import com.main.notelink.features.note.add.presentation.viewmodel.AddNoteViewModel
 import com.main.notelink.features.note.common.data.Note

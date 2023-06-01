@@ -1,7 +1,7 @@
 package com.main.notelink.features.note.add.domain.usecase
 
 import com.main.notelink.features.note.add.fake.FakeAddNoteRepository
-import com.main.notelink.main.data.cache.entities.NoteCache
+import com.main.notelink.features.note.common.data.Note
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
@@ -14,17 +14,17 @@ class AddNoteUseCaseTest {
     @Test
     fun `test add note`() = runBlocking {
         val testNotes = listOf(
-            NoteCache(title = "Title", content = "Content"),
-            NoteCache(title = "SecondTitle", content = "SecondContent"),
-            NoteCache(title = "ThirdTitle", content = "ThirdContent"),
+            Note(title = "Title", content = "Content"),
+            Note(title = "SecondTitle", content = "SecondContent"),
+            Note(title = "ThirdTitle", content = "ThirdContent"),
         )
         addNoteUseCase.execute(testNotes[0])
         addNoteUseCase.execute(testNotes[1])
 
-        assertEquals(testNotes[0], addNoteRepository.notes[0])
-        assertEquals(testNotes[1], addNoteRepository.notes[1])
+        assertEquals(testNotes[0], addNoteRepository.notes[0].mapToNote())
+        assertEquals(testNotes[1], addNoteRepository.notes[1].mapToNote())
 
         addNoteUseCase.execute(testNotes[2])
-        assertEquals(testNotes[2], addNoteRepository.notes[2])
+        assertEquals(testNotes[2], addNoteRepository.notes[2].mapToNote())
     }
 }

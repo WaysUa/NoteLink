@@ -15,8 +15,8 @@ class GetNotesUseCaseTest {
     fun `test get notes`() = runBlocking {
         val notesResult = getNotesUseCase.execute()
 
-        assertEquals(notesResult[0], getNotesRepository.getNotes()[0])
-        assertEquals(notesResult[1], getNotesRepository.getNotes()[1])
-        assertEquals(notesResult[2], getNotesRepository.getNotes()[2])
+        assertEquals(notesResult[0], getNotesRepository.getNotes()[0].mapToNote())
+        assertEquals(notesResult[1], getNotesRepository.getNotes()[1].mapToNote())
+        assertEquals(notesResult[2], getNotesRepository.getNotes()[2].mapToNote())
     }
 }
