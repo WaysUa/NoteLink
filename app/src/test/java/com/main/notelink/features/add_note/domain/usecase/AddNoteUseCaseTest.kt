@@ -1,6 +1,6 @@
 package com.main.notelink.features.add_note.domain.usecase
 
-import com.main.notelink.features.add_note.data.repository.FakeAddNoteRepository
+import com.main.notelink.features.add_note.fake.FakeAddNoteRepository
 import com.main.notelink.main.data.cache.entities.NoteCache
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.runBlocking

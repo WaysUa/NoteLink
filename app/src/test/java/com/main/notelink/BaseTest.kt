@@ -1,4 +1,4 @@
-package com.main.notelink.features.add_note
+package com.main.notelink
 
 import com.main.notelink.main.presentation.DispatchersList
 import kotlinx.coroutines.CoroutineDispatcher
@@ -8,7 +8,7 @@ import kotlinx.coroutines.test.UnconfinedTestDispatcher
 abstract class BaseTest {
 
     @OptIn(ExperimentalCoroutinesApi::class)
-    protected class TestDispatchersList(
+    protected class FakeDispatchersList(
         private val dispatcher: CoroutineDispatcher = UnconfinedTestDispatcher()
     ) : DispatchersList {
 
