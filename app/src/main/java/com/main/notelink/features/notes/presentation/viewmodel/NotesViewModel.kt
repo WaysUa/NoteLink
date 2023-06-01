@@ -7,11 +7,9 @@ import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.main.notelink.features.note.common.data.Note
 import com.main.notelink.features.notes.domain.navigation.NotesNavigationRepository
-import com.main.notelink.features.notes.domain.repository.GetNotesRepository
 import com.main.notelink.features.notes.domain.usecase.GetNotesUseCase
 import com.main.notelink.features.notes.presentation.communication.NotesCommunication
 import com.main.notelink.features.notes.presentation.communication.ObserveNotes
-import com.main.notelink.main.data.cache.entities.NoteCache
 import com.main.notelink.main.presentation.DispatchersList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

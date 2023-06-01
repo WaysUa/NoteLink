@@ -2,12 +2,9 @@ package com.main.notelink.features.notes.presentation.viewmodel
 
 import com.main.notelink.BaseTest
 import com.main.notelink.features.notes.data.navigation.NotesNavigationRepositoryImpl
-import com.main.notelink.features.notes.fake.FakeGetNotesRepository
 import com.main.notelink.features.notes.domain.usecase.GetNotesUseCase
+import com.main.notelink.features.notes.fake.FakeGetNotesRepository
 import com.main.notelink.features.notes.fake.FakeNotesCommunication
-import com.main.notelink.features.notes.presentation.communication.NotesCommunication
-import com.main.notelink.features.notes.presentation.communication.NotesListCommunication
-import com.main.notelink.main.data.cache.entities.NoteCache
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.runBlocking
 import org.junit.Test

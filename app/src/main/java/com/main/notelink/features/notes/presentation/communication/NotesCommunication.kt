@@ -3,7 +3,6 @@ package com.main.notelink.features.notes.presentation.communication
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.main.notelink.features.note.common.data.Note
-import com.main.notelink.main.data.cache.entities.NoteCache
 import com.main.notelink.main.presentation.Communication
 
 interface NotesCommunication : ObserveNotes {
