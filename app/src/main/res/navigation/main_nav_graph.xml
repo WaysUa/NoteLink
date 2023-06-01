@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
-        android:name="com.main.notelink.features.add_note.presentation.ui.AddNoteFragment"
+        android:name="com.main.notelink.features.note.add.presentation.ui.AddNoteFragment"
         android:label="fragment_add_note"
         tools:layout="@layout/fragment_add_note" />
 </navigation>

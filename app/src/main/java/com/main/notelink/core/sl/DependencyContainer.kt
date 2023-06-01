@@ -1,8 +1,8 @@
 package com.main.notelink.core.sl
 
 import androidx.lifecycle.ViewModel
-import com.main.notelink.features.add_note.presentation.viewmodel.AddNoteViewModel
-import com.main.notelink.features.add_note.sl.AddNoteModule
+import com.main.notelink.features.note.add.presentation.viewmodel.AddNoteViewModel
+import com.main.notelink.features.note.add.sl.AddNoteModule
 import com.main.notelink.features.notes.presentation.viewmodel.NotesViewModel
 import com.main.notelink.features.notes.sl.NotesModule
 

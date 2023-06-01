@@ -8,14 +8,15 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.main.notelink.R
 import com.main.notelink.databinding.ItemNoteBinding
+import com.main.notelink.features.note.common.data.Note
 import com.main.notelink.main.data.cache.entities.NoteCache
 
 class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
-    private val notes = mutableListOf<NoteCache>()
+    private val notes = mutableListOf<Note>()
 
     class NotesViewHolder(view: View): ViewHolder(view) {
         private val binding by lazy { ItemNoteBinding.bind(view) }
-        fun bind(note: NoteCache) {
+        fun bind(note: Note) {
             binding.tvTitle.text = note.title
             binding.tvContent.text = note.content
         }
@@ -33,7 +34,7 @@ class NotesAdapter : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     override fun getItemCount() = notes.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setNotes(notes: List<NoteCache>) {
+    fun setNotes(notes: List<Note>) {
         this.notes.clear()
         this.notes.addAll(notes)
         notifyDataSetChanged()

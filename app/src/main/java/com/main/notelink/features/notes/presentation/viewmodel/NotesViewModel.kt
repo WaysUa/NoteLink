@@ -5,6 +5,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
+import com.main.notelink.features.note.common.data.Note
 import com.main.notelink.features.notes.domain.navigation.NotesNavigationRepository
 import com.main.notelink.features.notes.domain.repository.GetNotesRepository
 import com.main.notelink.features.notes.domain.usecase.GetNotesUseCase
@@ -35,7 +36,7 @@ class NotesViewModel(
         notesNavigationRepository.navigateToAddNoteFragment(navController)
     }
 
-    override fun observeNotesList(owner: LifecycleOwner, observer: Observer<List<NoteCache>>) {
+    override fun observeNotesList(owner: LifecycleOwner, observer: Observer<List<Note>>) {
         notesCommunication.observeNotesList(owner, observer)
     }
 }
