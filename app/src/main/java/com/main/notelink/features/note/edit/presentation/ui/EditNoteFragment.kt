@@ -3,6 +3,7 @@ package com.main.notelink.features.note.edit.presentation.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.activity.addCallback
 import com.main.notelink.core.data.BaseFragment
 import com.main.notelink.core.data.parcelable
 import com.main.notelink.databinding.FragmentEditNoteBinding
@@ -18,6 +19,11 @@ class EditNoteFragment : BaseFragment<EditNoteViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val note = arguments?.parcelable<Note>(NotesNavigationRepository.NOTE_DATA)
-        Log.d("MyLog", "EditNoteFragment: $note")
+        binding.etTitle.setText(note?.title)
+        binding.etContent.setText(note?.content)
+
+        requireActivity().onBackPressedDispatcher.addCallback {
+
+        }
     }
 }
