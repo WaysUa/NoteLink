@@ -38,7 +38,7 @@ class NotesAdapter(
     @SuppressLint("NotifyDataSetChanged")
     fun setNotes(notes: List<Note>) {
         this.notes.clear()
-        this.notes.addAll(notes)
+        this.notes.addAll(notes.reversed())
         notifyDataSetChanged()
     }
 }
