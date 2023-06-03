@@ -6,13 +6,15 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class Note(
+    val id: Int = 0,
     val title: String,
     val content: String
 ) : Parcelable {
     fun mapToNoteCache(): NoteCache {
         return NoteCache(
-            title = this.title,
-            content = this.content
+            id = id,
+            title = title,
+            content = content
         )
     }
 }

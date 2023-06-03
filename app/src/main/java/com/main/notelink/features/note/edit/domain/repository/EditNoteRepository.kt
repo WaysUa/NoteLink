@@ -4,5 +4,5 @@ import com.main.notelink.main.data.cache.entities.NoteCache
 
 interface EditNoteRepository {
 
-    suspend fun editNote(noteCache: NoteCache)
+    suspend fun editNote(note: NoteCache)
 }

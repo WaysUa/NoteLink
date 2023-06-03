@@ -13,8 +13,9 @@ data class NoteCache (
 ) {
     fun mapToNote(): Note {
         return Note(
-            title = this.title,
-            content = this.content
+            id = id,
+            title = title,
+            content = content
         )
     }
 }

@@ -26,7 +26,7 @@ interface DependencyContainer {
         override fun <T : ViewModel> module(clazz: Class<T>): Module<*> = when (clazz) {
             NotesViewModel::class.java -> NotesModule(core)
             AddNoteViewModel::class.java -> AddNoteModule(core)
-            EditNoteViewModel::class.java -> EditNoteModule()
+            EditNoteViewModel::class.java -> EditNoteModule(core)
             else -> dependencyContainer.module(clazz)
         }
     }

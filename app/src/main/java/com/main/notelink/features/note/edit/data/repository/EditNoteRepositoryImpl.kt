@@ -6,7 +6,7 @@ import com.main.notelink.main.data.cache.entities.NoteCache
 
 class EditNoteRepositoryImpl(private val notesDao: NotesDao) : EditNoteRepository {
 
-    override suspend fun editNote(noteCache: NoteCache) {
-
+    override suspend fun editNote(note: NoteCache) {
+        notesDao.updateNote(note)
     }
 }
