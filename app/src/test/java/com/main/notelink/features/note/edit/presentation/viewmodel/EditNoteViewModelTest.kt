@@ -6,7 +6,6 @@ import com.main.notelink.features.note.edit.data.navigation.EditNoteNavigationRe
 import com.main.notelink.features.note.edit.domain.usecase.EditNoteUseCase
 import com.main.notelink.features.note.edit.fake.FakeEditNoteRepository
 import junit.framework.TestCase.assertEquals
-import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
 class EditNoteViewModelTest : BaseTest() {

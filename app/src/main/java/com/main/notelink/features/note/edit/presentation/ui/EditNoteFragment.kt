@@ -1,9 +1,9 @@
 package com.main.notelink.features.note.edit.presentation.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.activity.addCallback
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.main.notelink.core.data.BaseFragment
 import com.main.notelink.core.data.parcelable
@@ -11,6 +11,8 @@ import com.main.notelink.databinding.FragmentEditNoteBinding
 import com.main.notelink.features.note.common.data.Note
 import com.main.notelink.features.note.edit.presentation.viewmodel.EditNoteViewModel
 import com.main.notelink.features.notes.domain.navigation.NotesNavigationRepository
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class EditNoteFragment : BaseFragment<EditNoteViewModel>() {
 
@@ -32,7 +34,10 @@ class EditNoteFragment : BaseFragment<EditNoteViewModel>() {
                     content = binding.etContent.text.toString()
                 )
             )
-            viewModel.navigateToNotesFragment(findNavController())
+            lifecycleScope.launch {
+                delay(25)
+                viewModel.navigateToNotesFragment(findNavController())
+            }
         }
 
         requireActivity().onBackPressedDispatcher.addCallback {
@@ -43,7 +48,10 @@ class EditNoteFragment : BaseFragment<EditNoteViewModel>() {
                     content = binding.etContent.text.toString()
                 )
             )
-            viewModel.navigateToNotesFragment(findNavController())
+            lifecycleScope.launch {
+                delay(25)
+                viewModel.navigateToNotesFragment(findNavController())
+            }
         }
     }
 }

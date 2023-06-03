@@ -1,6 +1,7 @@
 package com.main.notelink.features.notes.presentation.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -19,6 +20,8 @@ class NotesFragment : BaseFragment<NotesViewModel>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.d("MyLog", "onViewCreated")
 
         binding.rvNotes.layoutManager = StaggeredGridLayoutManager(2, 1)
         binding.rvNotes.adapter = adapter
