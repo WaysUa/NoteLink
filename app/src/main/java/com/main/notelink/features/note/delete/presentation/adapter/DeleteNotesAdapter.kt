@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.main.notelink.R
+import com.main.notelink.databinding.ItemDeleteNoteBinding
 import com.main.notelink.databinding.ItemNoteBinding
 import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 
@@ -15,11 +16,12 @@ class DeleteNotesAdapter(
     private val notes = mutableListOf<NoteDeleteData>()
 
     class NotesViewHolder(view: View): ViewHolder(view) {
-        private val binding by lazy { ItemNoteBinding.bind(view) }
+        private val binding by lazy { ItemDeleteNoteBinding.bind(view) }
 
         fun bind(note: NoteDeleteData) {
             binding.tvTitle.text = note.title
             binding.tvContent.text = note.content
+            binding.checkBoxDelete.isChecked = note.isChecked
         }
     }
 

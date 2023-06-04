@@ -32,9 +32,9 @@ class NotesAdapter(
             }
             binding.itemNoteLayout.setOnLongClickListener {
                 onItemLongClick.invoke(
-                    notes.mapIndexed { index, note ->
-                        if (index == notes.indexOf(note)) note.mapToNoteDeleteData().copy(isChecked = true)
-                        else note.mapToNoteDeleteData()
+                    notes.mapIndexed { index, noteInList ->
+                        if (index == notes.indexOf(note)) noteInList.mapToNoteDeleteData().copy(isChecked = true)
+                        else noteInList.mapToNoteDeleteData()
                     }
                 )
                 true
