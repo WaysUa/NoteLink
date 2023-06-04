@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStoreOwner
 import com.main.notelink.core.sl.Core
-import com.main.notelink.core.sl.DependencyContainer
+import com.main.notelink.main.sl.DependencyContainer
 import com.main.notelink.core.sl.ProvideInstances
 import com.main.notelink.core.sl.ProvideViewModel
 import com.main.notelink.core.sl.ViewModelsFactory

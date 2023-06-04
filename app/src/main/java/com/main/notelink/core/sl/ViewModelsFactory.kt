@@ -2,6 +2,7 @@ package com.main.notelink.core.sl
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.main.notelink.main.sl.DependencyContainer
 
 @Suppress("UNCHECKED_CAST")
 class ViewModelsFactory(
