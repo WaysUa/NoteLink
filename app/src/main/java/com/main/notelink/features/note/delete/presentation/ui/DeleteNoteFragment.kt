@@ -1,8 +1,10 @@
 package com.main.notelink.features.note.delete.presentation.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.addCallback
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.main.notelink.core.data.BaseFragment
@@ -14,6 +16,8 @@ import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 import com.main.notelink.features.note.delete.presentation.adapter.DeleteNotesAdapter
 import com.main.notelink.features.note.delete.presentation.viewmodel.DeleteNoteViewModel
 import com.main.notelink.features.notes.domain.navigation.NotesNavigationRepository
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
 
@@ -32,12 +36,28 @@ class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
 
         adapter.setNotes(notes ?: emptyList())
 
-        binding.btnBack.setOnClickListener {
-            viewModel.navigateToNotesFragment(findNavController())
+        binding.btnClose.setOnClickListener {
+            lifecycleScope.launch {
+                delay(25)
+                viewModel.navigateToNotesFragment(findNavController())
+            }
+        }
+
+        binding.itemDelete.setOnClickListener {
+            adapter.getAllCheckedNotes().forEach {  noteDeleteData ->
+                viewModel.deleteNote(noteDeleteData)
+            }
+            lifecycleScope.launch {
+                delay(25)
+                viewModel.navigateToNotesFragment(findNavController())
+            }
         }
 
         requireActivity().onBackPressedDispatcher.addCallback {
-            viewModel.navigateToNotesFragment(findNavController())
+            lifecycleScope.launch {
+                delay(25)
+                viewModel.navigateToNotesFragment(findNavController())
+            }
         }
     }
 }

@@ -9,12 +9,12 @@
     tools:context="com.main.notelink.features.note.delete.presentation.ui.DeleteNoteFragment">
 
     <ImageButton
-        android:id="@+id/btnBack"
+        android:id="@+id/btnClose"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@null"
         android:contentDescription="@string/back"
-        android:src="@drawable/icon_back"
+        android:src="@drawable/icon_close"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,13 +26,14 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomSheet"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+        app:layout_constraintTop_toBottomOf="@+id/btnClose" />
 
     <LinearLayout
         android:id="@+id/bottomSheet"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:elevation="20dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
@@ -42,13 +43,13 @@
 
         <LinearLayout
             android:id="@+id/itemDelete"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@null"
             android:gravity="center"
             android:orientation="vertical">
 
-            <ImageButton
+            <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
