@@ -9,6 +9,8 @@ interface NotesNavigationRepository {
 
     fun navigateToEditNoteFragment(navController: NavController, note: Note)
 
+    fun navigateToDeleteNoteFragment(navController: NavController, note: Note)
+
     companion object {
         const val NOTE_DATA = "note_data"
     }

@@ -24,6 +24,9 @@
             app:exitAnim="@anim/nav_default_exit_anim"
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+        <action
+            android:id="@+id/actionFromNotesFragmentToDeleteNoteFragment"
+            app:destination="@id/deleteNoteFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNoteFragment"
@@ -35,4 +38,9 @@
         android:name="com.main.notelink.features.note.edit.presentation.ui.EditNoteFragment"
         android:label="fragment_edit_note"
         tools:layout="@layout/fragment_edit_note" />
+    <fragment
+        android:id="@+id/deleteNoteFragment"
+        android:name="com.main.notelink.features.note.delete.presentation.ui.DeleteNoteFragment"
+        android:label="fragment_delete_note"
+        tools:layout="@layout/fragment_delete_note" />
 </navigation>

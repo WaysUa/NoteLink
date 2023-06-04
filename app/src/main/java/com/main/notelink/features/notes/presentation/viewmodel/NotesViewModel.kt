@@ -38,6 +38,10 @@ class NotesViewModel(
         notesNavigationRepository.navigateToEditNoteFragment(navController, note)
     }
 
+    override fun navigateToDeleteNoteFragment(navController: NavController, note: Note) {
+        notesNavigationRepository.navigateToDeleteNoteFragment(navController, note)
+    }
+
     override fun observeNotesList(owner: LifecycleOwner, observer: Observer<List<Note>>) {
         notesCommunication.observeNotesList(owner, observer)
     }

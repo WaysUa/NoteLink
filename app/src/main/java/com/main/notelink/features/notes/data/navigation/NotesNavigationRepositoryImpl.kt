@@ -16,4 +16,9 @@ class NotesNavigationRepositoryImpl : NotesNavigationRepository {
         val args = bundleOf(NotesNavigationRepository.NOTE_DATA to note)
         navController.navigate(R.id.actionFromNotesFragmentToEditNoteFragment, args)
     }
+
+    override fun navigateToDeleteNoteFragment(navController: NavController, note: Note) {
+        val args = bundleOf(NotesNavigationRepository.NOTE_DATA to note)
+        navController.navigate(R.id.actionFromNotesFragmentToDeleteNoteFragment, args)
+    }
 }

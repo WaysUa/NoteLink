@@ -23,7 +23,7 @@ class NotesFragment : BaseFragment<NotesViewModel>() {
     override val binding by lazy { FragmentNotesBinding.inflate(layoutInflater) }
     private val adapter = NotesAdapter(
         onItemClick = { note -> viewModel.navigateToEditNoteFragment(findNavController(), note) },
-        onItemLongClick = { note ->  }
+        onItemLongClick = { note -> viewModel.navigateToDeleteNoteFragment(findNavController(), note) }
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
