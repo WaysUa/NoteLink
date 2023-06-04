@@ -2,14 +2,18 @@ package com.main.notelink.features.note.delete.presentation.ui
 
 import android.os.Bundle
 import android.view.View
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import androidx.viewbinding.ViewBinding
 import com.main.notelink.core.data.BaseFragment
+import com.main.notelink.core.data.parcelable
+import com.main.notelink.core.data.parcelableArrayList
 import com.main.notelink.databinding.FragmentDeleteNoteBinding
 import com.main.notelink.features.note.common.data.Note
+import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 import com.main.notelink.features.note.delete.presentation.adapter.DeleteNotesAdapter
 import com.main.notelink.features.note.delete.presentation.viewmodel.DeleteNoteViewModel
+import com.main.notelink.features.notes.domain.navigation.NotesNavigationRepository
 
 class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
 
@@ -21,14 +25,19 @@ class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val notes = requireArguments().parcelableArrayList<NoteDeleteData>(NotesNavigationRepository.NOTES_LIST_DATA)?.toList()
+
         binding.rvNotes.layoutManager = StaggeredGridLayoutManager(2, 1)
         binding.rvNotes.adapter = adapter
 
-        adapter.setNotes(listOf(
-            Note(title = "Hello", content = "Wor12ld"),
-            Note(title = "Hello32", content = "Wor6453ld"),
-            Note(title = "Hello3232", content = "W8orld"),
-            Note(title = "Hell4343o", content = "W7667orld"),
-        ))
+        adapter.setNotes(notes ?: emptyList())
+
+        binding.btnBack.setOnClickListener {
+            viewModel.navigateToNotesFragment(findNavController())
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback {
+            viewModel.navigateToNotesFragment(findNavController())
+        }
     }
 }

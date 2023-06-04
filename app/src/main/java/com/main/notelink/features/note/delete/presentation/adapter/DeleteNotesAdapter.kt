@@ -8,20 +8,18 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.main.notelink.R
 import com.main.notelink.databinding.ItemNoteBinding
-import com.main.notelink.features.note.common.data.Note
+import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 
 class DeleteNotesAdapter(
 ) : RecyclerView.Adapter<DeleteNotesAdapter.NotesViewHolder>() {
-    private val notes = mutableListOf<Note>()
+    private val notes = mutableListOf<NoteDeleteData>()
 
     class NotesViewHolder(view: View): ViewHolder(view) {
         private val binding by lazy { ItemNoteBinding.bind(view) }
-        fun bind(
-            note: Note
-        ) {
+
+        fun bind(note: NoteDeleteData) {
             binding.tvTitle.text = note.title
             binding.tvContent.text = note.content
-
         }
     }
 
@@ -37,9 +35,9 @@ class DeleteNotesAdapter(
     override fun getItemCount() = notes.size
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setNotes(notes: List<Note>) {
+    fun setNotes(notes: List<NoteDeleteData>) {
         this.notes.clear()
-        this.notes.addAll(notes.reversed())
+        this.notes.addAll(notes)
         notifyDataSetChanged()
     }
 }

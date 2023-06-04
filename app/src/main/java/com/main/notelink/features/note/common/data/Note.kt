@@ -1,6 +1,7 @@
 package com.main.notelink.features.note.common.data
 
 import android.os.Parcelable
+import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 import com.main.notelink.main.data.cache.entities.NoteCache
 import kotlinx.parcelize.Parcelize
 
@@ -12,6 +13,14 @@ data class Note(
 ) : Parcelable {
     fun mapToNoteCache(): NoteCache {
         return NoteCache(
+            id = id,
+            title = title,
+            content = content
+        )
+    }
+
+    fun mapToNoteDeleteData(): NoteDeleteData {
+        return NoteDeleteData(
             id = id,
             title = title,
             content = content

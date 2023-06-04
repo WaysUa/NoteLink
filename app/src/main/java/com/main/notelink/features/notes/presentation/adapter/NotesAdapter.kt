@@ -9,19 +9,21 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.main.notelink.R
 import com.main.notelink.databinding.ItemNoteBinding
 import com.main.notelink.features.note.common.data.Note
+import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 
 class NotesAdapter(
     private val onItemClick: (Note) -> Unit,
-    private val onItemLongClick: (Note) -> Unit
+    private val onItemLongClick: (List<NoteDeleteData>) -> Unit
 ) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     private val notes = mutableListOf<Note>()
 
     class NotesViewHolder(view: View): ViewHolder(view) {
         private val binding by lazy { ItemNoteBinding.bind(view) }
+
         fun bind(
-            note: Note,
+            note: Note, notes: List<Note>,
             onItemClick: (Note) -> Unit,
-            onItemLongClick: (Note) -> Unit
+            onItemLongClick: (List<NoteDeleteData>) -> Unit
         ) {
             binding.tvTitle.text = note.title
             binding.tvContent.text = note.content
@@ -29,7 +31,12 @@ class NotesAdapter(
                 onItemClick.invoke(note)
             }
             binding.itemNoteLayout.setOnLongClickListener {
-                onItemLongClick.invoke(note)
+                onItemLongClick.invoke(
+                    notes.mapIndexed { index, note ->
+                        if (index == notes.indexOf(note)) note.mapToNoteDeleteData().copy(isChecked = true)
+                        else note.mapToNoteDeleteData()
+                    }
+                )
                 true
             }
         }
@@ -41,7 +48,7 @@ class NotesAdapter(
     }
 
     override fun onBindViewHolder(holder: NotesViewHolder, position: Int) {
-        holder.bind(notes[position], onItemClick, onItemLongClick)
+        holder.bind(notes[position], notes, onItemClick, onItemLongClick)
     }
 
     override fun getItemCount() = notes.size

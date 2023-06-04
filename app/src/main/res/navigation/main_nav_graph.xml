@@ -28,16 +28,19 @@
             android:id="@+id/actionFromNotesFragmentToDeleteNoteFragment"
             app:destination="@id/deleteNoteFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/addNoteFragment"
         android:name="com.main.notelink.features.note.add.presentation.ui.AddNoteFragment"
         android:label="fragment_add_note"
         tools:layout="@layout/fragment_add_note" />
+
     <fragment
         android:id="@+id/editNoteFragment"
         android:name="com.main.notelink.features.note.edit.presentation.ui.EditNoteFragment"
         android:label="fragment_edit_note"
         tools:layout="@layout/fragment_edit_note" />
+
     <fragment
         android:id="@+id/deleteNoteFragment"
         android:name="com.main.notelink.features.note.delete.presentation.ui.DeleteNoteFragment"

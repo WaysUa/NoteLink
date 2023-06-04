@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import com.main.notelink.features.note.common.data.Note
+import com.main.notelink.features.note.delete.data.entities.NoteDeleteData
 import com.main.notelink.features.notes.domain.navigation.NotesNavigationRepository
 import com.main.notelink.features.notes.domain.usecase.GetNotesUseCase
 import com.main.notelink.features.notes.presentation.communication.NotesCommunication
@@ -38,8 +39,8 @@ class NotesViewModel(
         notesNavigationRepository.navigateToEditNoteFragment(navController, note)
     }
 
-    override fun navigateToDeleteNoteFragment(navController: NavController, note: Note) {
-        notesNavigationRepository.navigateToDeleteNoteFragment(navController, note)
+    override fun navigateToDeleteNoteFragment(navController: NavController, notes: ArrayList<NoteDeleteData>) {
+        notesNavigationRepository.navigateToDeleteNoteFragment(navController, notes)
     }
 
     override fun observeNotesList(owner: LifecycleOwner, observer: Observer<List<Note>>) {
