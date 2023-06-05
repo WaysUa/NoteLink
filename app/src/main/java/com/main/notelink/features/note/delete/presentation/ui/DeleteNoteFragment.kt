@@ -30,11 +30,10 @@ class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
         super.onViewCreated(view, savedInstanceState)
 
         val notes = requireArguments().parcelableArrayList<NoteDeleteData>(NotesNavigationRepository.NOTES_LIST_DATA)?.toList()
+        adapter.setNotes(notes ?: emptyList())
 
         binding.rvNotes.layoutManager = StaggeredGridLayoutManager(2, 1)
         binding.rvNotes.adapter = adapter
-
-        adapter.setNotes(notes ?: emptyList())
 
         binding.btnClose.setOnClickListener {
             lifecycleScope.launch {
@@ -44,6 +43,7 @@ class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
         }
 
         binding.itemDelete.setOnClickListener {
+            //todo improve code delay(25) to navigation repository
             adapter.getAllCheckedNotes().forEach {  noteDeleteData ->
                 viewModel.deleteNote(noteDeleteData)
             }

@@ -20,4 +20,12 @@ data class NoteDeleteData(
             content = content
         )
     }
+
+    fun mapToNoteCache(): NoteCache {
+        return NoteCache(
+            id = id,
+            title = title,
+            content = content
+        )
+    }
 }
