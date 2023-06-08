@@ -34,6 +34,9 @@ android {
         jvmTarget = Config.jvmTarget
     }
     viewBinding.enable = true
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
