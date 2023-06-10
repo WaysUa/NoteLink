@@ -35,7 +35,7 @@ jobs:
           name: unit_test_report
           path: app/build/reports/tests/testDebugUnitTest/
 
-  klint:
+  ktlint:
     runs-on: ubuntu-latest
 
     steps:
