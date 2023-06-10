@@ -9,7 +9,7 @@ import com.main.notelink.features.notes.presentation.communication.NotesCommunic
 import com.main.notelink.features.notes.presentation.communication.NotesListCommunication
 import com.main.notelink.features.notes.presentation.viewmodel.NotesViewModel
 
-class NotesModule(private val core: Core): Module<NotesViewModel> {
+class NotesModule(private val core: Core) : Module<NotesViewModel> {
     override fun viewModel(): NotesViewModel {
         val communication = NotesCommunication.Base(
             notesListCommunication = NotesListCommunication.Base()

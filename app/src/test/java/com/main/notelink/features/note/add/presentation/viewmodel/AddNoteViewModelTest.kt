@@ -23,7 +23,7 @@ class AddNoteViewModelTest : BaseTest() {
         val testNotes = listOf(
             Note(title = "Title", content = "Content"),
             Note(title = "SecondTitle", content = "SecondContent"),
-            Note(title = "ThirdTitle", content = "ThirdContent"),
+            Note(title = "ThirdTitle", content = "ThirdContent")
         )
         addNoteViewModel.addNote(testNotes[0])
         addNoteViewModel.addNote(testNotes[1])
@@ -40,7 +40,7 @@ class AddNoteViewModelTest : BaseTest() {
         val testNotes = listOf(
             Note(title = "", content = ""),
             Note(title = "SecondTitle", content = "SecondContent"),
-            Note(title = "ThirdTitle", content = "ThirdContent"),
+            Note(title = "ThirdTitle", content = "ThirdContent")
         )
         addNoteViewModel.addNote(testNotes[0])
         addNoteViewModel.addNote(testNotes[1])

@@ -14,6 +14,11 @@ object Plugins {
         const val version = "1.8.10"
     }
 
+    object Ktlint {
+        const val depencency = "org.jlleitschuh.gradle.ktlint"
+        const val version = "11.4.0"
+    }
+
     object Kapt {
         const val dependency = "kotlin-kapt"
     }

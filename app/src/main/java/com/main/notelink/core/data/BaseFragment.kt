@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
 import com.main.notelink.core.sl.ProvideViewModel
 
-abstract class BaseFragment<T: ViewModel> : Fragment() {
+abstract class BaseFragment<T : ViewModel> : Fragment() {
 
     protected lateinit var viewModel: T
     protected abstract val viewModelClass: Class<T>

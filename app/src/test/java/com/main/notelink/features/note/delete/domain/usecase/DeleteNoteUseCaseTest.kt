@@ -17,7 +17,7 @@ class DeleteNoteUseCaseTest {
         val notes = listOf(
             NoteDeleteData(title = "Title", content = "Content"),
             NoteDeleteData(title = "SecondTitle", content = "SecondContent"),
-            NoteDeleteData(title = "ThirdTitle", content = "ThirdContent"),
+            NoteDeleteData(title = "ThirdTitle", content = "ThirdContent")
         )
 
         deleteNoteRepository.addNotes(notes.map { it.mapToNoteCache() })

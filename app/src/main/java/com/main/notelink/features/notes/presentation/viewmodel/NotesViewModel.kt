@@ -20,7 +20,7 @@ class NotesViewModel(
     private val getNotesUseCase: GetNotesUseCase,
     private val notesNavigationRepository: NotesNavigationRepository,
     private val notesCommunication: NotesCommunication
-): ViewModel(), NotesNavigationRepository, ObserveNotes {
+) : ViewModel(), NotesNavigationRepository, ObserveNotes {
 
     fun getNotes() {
         viewModelScope.launch(dispatchers.io()) {
@@ -39,7 +39,10 @@ class NotesViewModel(
         notesNavigationRepository.navigateToEditNoteFragment(navController, note)
     }
 
-    override fun navigateToDeleteNoteFragment(navController: NavController, notes: ArrayList<NoteDeleteData>) {
+    override fun navigateToDeleteNoteFragment(
+        navController: NavController,
+        notes: ArrayList<NoteDeleteData>
+    ) {
         notesNavigationRepository.navigateToDeleteNoteFragment(navController, notes)
     }
 

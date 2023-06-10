@@ -3,6 +3,7 @@ plugins {
     id(Plugins.Android.dependency)
     id(Plugins.Kapt.dependency)
     id(Plugins.Parcelable.dependency)
+    id(Plugins.Ktlint.depencency) version (Plugins.Ktlint.version)
 }
 
 android {
@@ -23,7 +24,10 @@ android {
         @Suppress("UnstableApiUsage")
         release {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -39,25 +43,35 @@ android {
     }
 }
 
+ktlint {
+    android.set(true)
+    ignoreFailures.set(false)
+    reporters {
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.PLAIN)
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE)
+        reporter(org.jlleitschuh.gradle.ktlint.reporter.ReporterType.SARIF)
+    }
+}
+
 dependencies {
-    //Basic
+    // Basic
     implementation(Dependencies.Android.coreKtx)
     implementation(Dependencies.Android.appCompat)
     implementation(Dependencies.Android.constraintLayout)
     implementation(Dependencies.Android.material)
     implementation(Dependencies.Android.fragment)
-    //Unit Testing
+    // Unit Testing
     testImplementation(Dependencies.Testing.JUnit.core)
     testImplementation(Dependencies.Testing.KotlinX.coroutines)
-    //Ui Testing
+    // Ui Testing
     androidTestImplementation(Dependencies.Testing.JUnit.ui)
     androidTestImplementation(Dependencies.Testing.Espresso.core)
     androidTestImplementation(Dependencies.Testing.KotlinX.coroutines)
     androidTestImplementation(Dependencies.Testing.AndroidX.core)
-    //Navigation
+    // Navigation
     implementation(Dependencies.Navigation.navigationFragment)
     implementation(Dependencies.Navigation.navigationUi)
-    //Room
+    // Room
     implementation(Dependencies.Room.core)
     kapt(Dependencies.Room.compiler)
 }

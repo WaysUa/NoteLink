@@ -11,7 +11,7 @@ data class NoteDeleteData(
     val title: String,
     val content: String,
     var isChecked: Boolean = false
-): Parcelable {
+) : Parcelable {
 
     fun mapToNote(): Note {
         return Note(

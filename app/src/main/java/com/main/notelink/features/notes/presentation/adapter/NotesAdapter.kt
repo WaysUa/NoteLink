@@ -17,11 +17,12 @@ class NotesAdapter(
 ) : RecyclerView.Adapter<NotesAdapter.NotesViewHolder>() {
     private val notes = mutableListOf<Note>()
 
-    class NotesViewHolder(view: View): ViewHolder(view) {
+    class NotesViewHolder(view: View) : ViewHolder(view) {
         private val binding by lazy { ItemNoteBinding.bind(view) }
 
         fun bind(
-            note: Note, notes: List<Note>,
+            note: Note,
+            notes: List<Note>,
             onItemClick: (Note) -> Unit,
             onItemLongClick: (List<NoteDeleteData>) -> Unit
         ) {
@@ -33,8 +34,11 @@ class NotesAdapter(
             binding.itemNoteLayout.setOnLongClickListener {
                 onItemLongClick.invoke(
                     notes.mapIndexed { index, noteInList ->
-                        if (index == notes.indexOf(note)) noteInList.mapToNoteDeleteData().copy(isChecked = true)
-                        else noteInList.mapToNoteDeleteData()
+                        if (index == notes.indexOf(note)) {
+                            noteInList.mapToNoteDeleteData().copy(isChecked = true)
+                        } else {
+                            noteInList.mapToNoteDeleteData()
+                        }
                     }
                 )
                 true

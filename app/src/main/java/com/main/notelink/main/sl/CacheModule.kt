@@ -7,7 +7,7 @@ import com.main.notelink.main.data.cache.NoteLinkDatabase
 interface CacheModule {
     fun provideDataBase(): NoteLinkDatabase
 
-    class Base(private val context: Context): CacheModule {
+    class Base(private val context: Context) : CacheModule {
         private val database by lazy {
             return@lazy Room.databaseBuilder(
                 context,
@@ -19,7 +19,7 @@ interface CacheModule {
         override fun provideDataBase(): NoteLinkDatabase = database
     }
 
-    class Mock(private val context: Context): CacheModule {
+    class Mock(private val context: Context) : CacheModule {
         private val database by lazy {
             Room.inMemoryDatabaseBuilder(context, NoteLinkDatabase::class.java).build()
         }

@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.main.notelink.features.note.common.data.Note
 
 @Entity(tableName = "notes_table")
-data class NoteCache (
+data class NoteCache(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "content") val content: String

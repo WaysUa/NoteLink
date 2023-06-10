@@ -7,7 +7,7 @@ import com.main.notelink.features.note.edit.data.repository.EditNoteRepositoryIm
 import com.main.notelink.features.note.edit.domain.usecase.EditNoteUseCase
 import com.main.notelink.features.note.edit.presentation.viewmodel.EditNoteViewModel
 
-class EditNoteModule(private val core: Core): Module<EditNoteViewModel> {
+class EditNoteModule(private val core: Core) : Module<EditNoteViewModel> {
     override fun viewModel(): EditNoteViewModel {
         val editNoteUseCase = EditNoteUseCase(
             EditNoteRepositoryImpl(core.provideDataBase().notesDao())

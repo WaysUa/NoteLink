@@ -23,7 +23,7 @@ class EditNoteViewModelTest : BaseTest() {
         val testNotes = listOf(
             Note(id = 0, title = "Title", content = "Content"),
             Note(id = 1, title = "SecondTitle", content = "SecondContent"),
-            Note(id = 2, title = "ThirdTitle", content = "ThirdContent"),
+            Note(id = 2, title = "ThirdTitle", content = "ThirdContent")
         )
         editNoteViewModel.updateNote(testNotes[0])
         editNoteViewModel.updateNote(testNotes[1])

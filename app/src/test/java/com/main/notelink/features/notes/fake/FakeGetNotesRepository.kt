@@ -9,7 +9,7 @@ class FakeGetNotesRepository : GetNotesRepository {
         return listOf(
             NoteCache(title = "FirstTitle", content = "FirstContent"),
             NoteCache(title = "SecondTitle", content = "SecondContent"),
-            NoteCache(title = "ThirdTitle", content = "ThirdContent"),
+            NoteCache(title = "ThirdTitle", content = "ThirdContent")
         )
     }
 }

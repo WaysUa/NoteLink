@@ -16,7 +16,7 @@ class AddNoteUseCaseTest {
         val testNotes = listOf(
             Note(title = "Title", content = "Content"),
             Note(title = "SecondTitle", content = "SecondContent"),
-            Note(title = "ThirdTitle", content = "ThirdContent"),
+            Note(title = "ThirdTitle", content = "ThirdContent")
         )
         addNoteUseCase.execute(testNotes[0])
         addNoteUseCase.execute(testNotes[1])

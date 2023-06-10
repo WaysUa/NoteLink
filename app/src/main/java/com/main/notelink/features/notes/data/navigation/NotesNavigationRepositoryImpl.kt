@@ -20,7 +20,7 @@ class NotesNavigationRepositoryImpl : NotesNavigationRepository {
 
     override fun navigateToDeleteNoteFragment(
         navController: NavController,
-        notes: ArrayList<NoteDeleteData>,
+        notes: ArrayList<NoteDeleteData>
     ) {
         val args = bundleOf(NotesNavigationRepository.NOTES_LIST_DATA to notes)
         navController.navigate(R.id.actionFromNotesFragmentToDeleteNoteFragment, args)
