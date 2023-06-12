@@ -40,7 +40,7 @@ class DeleteNoteFragment : BaseFragment<DeleteNoteViewModel>() {
             }
         }
 
-        binding.itemDelete.setOnClickListener {
+        binding.btnDelete.setOnClickListener {
             // todo improve code delay(25) to navigation repository
             adapter.getAllCheckedNotes().forEach { noteDeleteData ->
                 viewModel.deleteNote(noteDeleteData)

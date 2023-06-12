@@ -11,6 +11,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.main.notelink.features.notes.RecyclerViewMatcher
 import com.main.notelink.main.presentation.MainActivity
+import org.hamcrest.CoreMatchers
 import org.junit.Rule
 import org.junit.runner.RunWith
 
@@ -35,6 +36,14 @@ abstract class BaseTest {
 
     protected fun ViewInteraction.click() {
         perform(ViewActions.click())
+    }
+
+    protected fun ViewInteraction.isNotTextInRecyclerView(text: String): ViewInteraction {
+        return check(matches(CoreMatchers.not(ViewMatchers.hasDescendant(withText(text)))))
+    }
+
+    protected fun ViewInteraction.longClick() {
+        perform(ViewActions.longClick())
     }
 
     protected fun Int.viewInRecycler(position: Int, viewId: Int): ViewInteraction {

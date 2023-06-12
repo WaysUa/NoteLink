@@ -9,5 +9,5 @@ class NotesScreen : Screen() {
     val rvNotes = R.id.rvNotes
     val tvTitle = R.id.tvTitle
     val tvContent = R.id.tvContent
-    val item_note_layout = R.id.item_note_layout
+    val itemNoteLayout = R.id.item_note_layout
 }

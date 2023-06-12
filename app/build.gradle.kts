@@ -61,13 +61,14 @@ dependencies {
     implementation(Dependencies.Android.material)
     implementation(Dependencies.Android.fragment)
     // Unit Testing
-    testImplementation(Dependencies.Testing.JUnit.core)
-    testImplementation(Dependencies.Testing.KotlinX.coroutines)
+    testImplementation(Dependencies.UnitTesting.JUnit.core)
+    testImplementation(Dependencies.UnitTesting.KotlinX.coroutines)
     // Ui Testing
-    androidTestImplementation(Dependencies.Testing.JUnit.ui)
-    androidTestImplementation(Dependencies.Testing.Espresso.core)
-    androidTestImplementation(Dependencies.Testing.KotlinX.coroutines)
-    androidTestImplementation(Dependencies.Testing.AndroidX.core)
+    androidTestImplementation(Dependencies.AndroidTesting.JUnit.core)
+    androidTestImplementation(Dependencies.AndroidTesting.JUnit.ui)
+    androidTestImplementation(Dependencies.AndroidTesting.Espresso.core)
+    androidTestImplementation(Dependencies.AndroidTesting.AndroidX.core)
+    androidTestImplementation(Dependencies.AndroidTesting.Barista.core)
     // Navigation
     implementation(Dependencies.Navigation.navigationFragment)
     implementation(Dependencies.Navigation.navigationUi)

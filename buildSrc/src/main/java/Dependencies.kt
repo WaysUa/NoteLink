@@ -23,14 +23,21 @@ object Dependencies {
         const val runtime = "androidx.room:room-runtime:$version"
     }
 
-    object Testing {
+    object UnitTesting {
+        object JUnit {
+            const val core = "junit:junit:4.13.2"
+        }
+
+        object KotlinX {
+            const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1"
+        }
+    }
+
+    object AndroidTesting {
         
         object JUnit {
             const val core = "junit:junit:4.13.2"
             const val ui = "androidx.test.ext:junit:1.1.5"
-        }
-        object KotlinX {
-            const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.1"
         }
 
         object Espresso {
@@ -41,8 +48,8 @@ object Dependencies {
             const val core = "androidx.test:core-ktx:1.5.0"
         }
 
-        object Room {
-            const val core = "androidx.room:room-testing:2.5.1"
+        object Barista {
+            const val core = "com.adevinta.android:barista:4.2.0"
         }
     }
 }
