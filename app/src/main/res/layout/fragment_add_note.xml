@@ -2,19 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentAddNoteLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.main.notelink.features.note.add.presentation.ui.AddNoteFragment" >
+    tools:context="com.main.notelink.features.note.add.presentation.ui.AddNoteFragment">
 
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@null"
+        android:contentDescription="@string/back"
         android:src="@drawable/icon_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/back" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/etTitle"
@@ -44,10 +45,10 @@
         android:ems="10"
         android:gravity="start"
         android:hint="@string/content"
+        android:inputType="textMultiLine"
         android:singleLine="false"
         android:textColorHint="@color/gray_light"
         android:textSize="17sp"
-        android:inputType="textMultiLine"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/btnBack"
